@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `https://projectsrishabh.in/users/${_id}/${friendId}`,
+      `http://projectsrishabh.in/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {
