@@ -20,5 +20,9 @@ jobs:
         echo "$SSH_PRIVATE_KEY" > keyfile
         chmod 600 keyfile
         mkdir -p ~/.ssh
+        
+        # Copy the known_hosts file from your project's root directory
         cp known_hosts ~/.ssh/known_hosts
-        ssh -t -i keyfile ubuntu@3.86.88.93 "sudo bash ~/deploy.sh"
+        
+        ssh -i keyfile ubuntu@3.86.88.93 "sudo bash ~/deploy.sh"
+   
