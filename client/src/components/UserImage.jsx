@@ -1,3 +1,4 @@
+import config from "../config.js";
 import { Box } from "@mui/material";
 
 const UserImage = ({ image, size = "60px" }) => {
@@ -8,7 +9,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`http://projectsrishabh.in/assets/${image}`}
+        src={`${config.API_BASE_URL}/assets/${image}`}
       />
     </Box>
   );

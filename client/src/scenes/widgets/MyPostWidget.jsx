@@ -1,3 +1,4 @@
+import config from "../../config.js";
 import {
   EditOutlined,
   DeleteOutlined,
@@ -46,7 +47,7 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("picturePath", image.name);
     }
 
-    const response = await fetch(`http://projectsrishabh.in/posts`, {
+    const response = await fetch(`${config.API_BASE_URL}/posts`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,

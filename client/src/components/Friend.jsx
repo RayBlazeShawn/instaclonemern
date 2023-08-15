@@ -1,3 +1,4 @@
+import config from "../config.js";
 import { PersonAddOutlined, PersonRemoveOutlined } from "@mui/icons-material";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,7 +24,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `http://projectsrishabh.in/users/${_id}/${friendId}`,
+      `${config.API_BASE_URL}/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {

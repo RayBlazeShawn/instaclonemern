@@ -1,3 +1,4 @@
+import config from "../../config.js";
 import {
   ChatBubbleOutlineOutlined,
   FavoriteBorderOutlined,
@@ -35,7 +36,7 @@ const PostWidget = ({
   const primary = palette.primary.main;
 
   const patchLike = async () => {
-    const response = await fetch(`http://projectsrishabh.in/posts/${postId}/like`, {
+    const response = await fetch(`${config.API_BASE_URL}/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -64,7 +65,7 @@ const PostWidget = ({
           height="auto"
           alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-          src={`http://projectsrishabh.in/assets/${picturePath}`}
+          src={`${config.API_BASE_URL}/assets/${picturePath}`}
         />
       )}
       <FlexBetween mt="0.25rem">
